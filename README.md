@@ -7,7 +7,7 @@ For assignment purpose only
 Type the following commands in the command prompt to check is python and pip is installed on your system.
 
 ### To check Python
-#### _python --version_
+`python --version`<br/>
 If python is successfully installed, the version of python installed on your system will be displayed.
 
 ### To check pip
