@@ -11,17 +11,17 @@ Type the following commands in the command prompt to check is python and pip is 
 If python is successfully installed, the version of python installed on your system will be displayed.
 
 ### To check pip
-#### _pip -V_
+`pip -V_`<br/>
 The version of pip will be displayed, if it is successfully installed on your system.
 
 
 ### Step 2 − Install Matplotlib
-#### _pip install matplotlib_
+`pip install matplotlib`<br/>
 Matplotlib can be installed using pip. The command above is run in the command prompt to install Matplotlib. This command will start downloading and installing packages related to the matplotlib library. Once done, the message of successful installation will be displayed.
 
 
 ### Step 3 − Install NeutworkX
-#### _pip install networkx_
+`pip install networkx`<br/>
 NeutworkX can be installed using pip. The command above is run in the command prompt to install NeutworkX. This command will start downloading and installing packages related to the NeutworkX library. Once done, the message of successful installation will be displayed.
 
 
