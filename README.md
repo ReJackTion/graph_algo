@@ -6,23 +6,23 @@ For assignment purpose only
 ### Step 1 − Make sure Python and pip is preinstalled on your system
 Type the following commands in the command prompt to check is python and pip is installed on your system.
 
-#### To check Python
-_python --version_
-/nIf python is successfully installed, the version of python installed on your system will be displayed.
+### To check Python
+####_python --version_
+If python is successfully installed, the version of python installed on your system will be displayed.
 
-#### To check pip
-_pip -V_
-/nThe version of pip will be displayed, if it is successfully installed on your system.
+### To check pip
+#### _pip -V_
+The version of pip will be displayed, if it is successfully installed on your system.
 
 
 ### Step 2 − Install Matplotlib
-_pip install matplotlib_
-/nMatplotlib can be installed using pip. The command above is run in the command prompt to install Matplotlib. This command will start downloading and installing packages related to the matplotlib library. Once done, the message of successful installation will be displayed.
+#### _pip install matplotlib_
+Matplotlib can be installed using pip. The command above is run in the command prompt to install Matplotlib. This command will start downloading and installing packages related to the matplotlib library. Once done, the message of successful installation will be displayed.
 
 
 ### Step 3 − Install NeutworkX
-_pip install networkx_
-/nNeutworkX can be installed using pip. The command above is run in the command prompt to install NeutworkX. This command will start downloading and installing packages related to the NeutworkX library. Once done, the message of successful installation will be displayed.
+#### _pip install networkx_
+NeutworkX can be installed using pip. The command above is run in the command prompt to install NeutworkX. This command will start downloading and installing packages related to the NeutworkX library. Once done, the message of successful installation will be displayed.
 
 
 ### Step 4 - Run the py file
