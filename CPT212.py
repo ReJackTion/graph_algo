@@ -314,7 +314,6 @@ while True:
 
         initialize()
         reverse_graph_image.reverse_graph(default_graph)
-        default_graph.print_graph()
         default_graph.visualize_graph()
 
     if choice == 5:
