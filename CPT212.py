@@ -47,7 +47,7 @@ class Graph:
                 print(all_city)
             print("\n")
 
-#-------------------------------------------------------            
+        
     def visualize_graph(self):
         
         all_edges = []
@@ -68,7 +68,6 @@ class Graph:
             edge_labels.update(data)
         nx.draw_networkx_edge_labels(G,pos,edge_labels=edge_labels)
         plt.show()
-        input("Press enter to continue ;)")
         
 #--------------------------------------------------------
 
@@ -127,6 +126,7 @@ class Graph:
                 if ref_graph.adjacent_to(city,adjacent_city[0]) and not self.adjacent_to(adjacent_city[0],city) and city != adjacent_city[0] :
                     self.add_edge(adjacent_city[0],city)
 
+#-----------------------------------------------------------------------------------------
     def cycle_detection(self)->bool:
 
         visited=["unexplored"]*len(self.city_list)
@@ -160,7 +160,8 @@ class Graph:
     def print_cycle(self,path_track,visited):
 
         path=len(path_track)
-
+        
+        print("\n")
         for city in path_track:
 
             path=path-1
@@ -169,8 +170,9 @@ class Graph:
                 break
             if visited[self.city_list.index(city)]!="unreachable":
                 print(city,end=" -> ")
-        print("\n")
+        
 
+#--------------------------------------------------------------------------
     def shortest_path(self,source,destination)->None:
 
         visited=[False]*len(self.city_list)
@@ -282,15 +284,15 @@ while True:
         reverse_graph_image.visualize_graph()
         
     if choice == 2:
-
-        i=0
+        
+        default_graph.visualize_graph()
         while not default_graph.cycle_detection():
-            if i==0:
-                print("The graph has no cycle")
-                print("start generating edge..")
-                i=i+1
-            default_graph.generate_random_edge()
-        default_graph.print_graph()
+            if (default_graph.cycle_detection() == False):
+                print("The graph has no cycle.")
+                default_graph.generate_random_edge()
+                input("Press enter to continue generating an new edge :)")
+                print("Start generating an new edge...")
+        print("\nCycle found! Above is the path of the cycle detected.\n")
         default_graph.visualize_graph()
 
     if choice == 3:
@@ -317,33 +319,4 @@ while True:
 
     if choice == 5:
         break
-
-
-
-
-
-
-
-
-
-
-#default_graph.print_graph()
-#print(default_graph.check_connectivity())
-#print(default_graph.adjacent_to("Reykjavík, Iceland","Zürich, Switzerland"))
-#reverse_graph_image=Graph()
-#reverse_graph_image.reverse_graph(default_graph)
-
-#while not default_graph.check_connectivity() or not reverse_graph_image.check_connectivity() :
-    #default_graph.generate_random_edge()
-    #reverse_graph_image.reverse_graph(default_graph)
-
-#default_graph.print_graph()
-
-#while not default_graph.cycle_detection():
-    #default_graph.generate_random_edge()
-#default_graph.shortest_path("Reykjavík, Iceland","Brasília, Brazil")
-#print("---------------")
-#reverse_graph_image.print_graph()
-#print("---------------")
-#default_graph.print_graph()
 
