@@ -127,8 +127,7 @@ class Graph:
                     self.add_edge(adjacent_city[0],city)
 
 #-----------------------------------------------------------------------------------------
-    def cycle_detection(self)->bool:
-
+    def cycle_detection(self):
         visited=["unexplored"]*len(self.city_list)
         list_of_city=[]
 
@@ -136,13 +135,14 @@ class Graph:
 
             if self.cycle_dfs(city,list_of_city,visited):
                 self.print_cycle(list_of_city,visited)
-
                 return True
+            
             list_of_city.clear()
             visited=["unexplored"]*len(self.city_list)
         return False
 
-    def cycle_dfs(self,source,path_track,visited)->bool:
+
+    def cycle_dfs(self,source,path_track,visited):
         visited[self.city_list.index(source)]="visited"
         current=self.graph[source]
         path_track.append(source)
@@ -157,11 +157,11 @@ class Graph:
         visited[self.city_list.index(source)]="unreachable"
         return False
 
-    def print_cycle(self,path_track,visited):
 
-        path=len(path_track)
-        
+    def print_cycle(self,path_track,visited):
+        path=len(path_track)        
         print("\n")
+        
         for city in path_track:
 
             path=path-1
@@ -287,11 +287,11 @@ while True:
         
         default_graph.visualize_graph()
         while not default_graph.cycle_detection():
-            if (default_graph.cycle_detection() == False):
-                print("The graph has no cycle.")
-                default_graph.generate_random_edge()
-                input("Press enter to continue generating an new edge :)")
-                print("Start generating an new edge...")
+            print("The graph has no cycle.")
+            default_graph.generate_random_edge()
+            input("Press enter to continue generating an new edge :)")
+            print("Start generating an new edge...")
+        
         print("\nCycle found! Above is the path of the cycle detected.\n")
         default_graph.visualize_graph()
 
